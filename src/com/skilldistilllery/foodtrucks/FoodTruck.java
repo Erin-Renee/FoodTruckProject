@@ -1,20 +1,30 @@
 package com.skilldistilllery.foodtrucks;
 
 public class FoodTruck {
-	private int trucknum = 5;
+	private static int trucknum=1;
 	private String truckName;
 	private  String foodType;
 	private int rating;
+	private int ID;
 	
-	public FoodTruck (int trucks, String truckName, String foodType, int rating) {
-		this.trucknum = 5;
+	public FoodTruck (String truckName, String foodType, int rating) {
 		this.truckName = truckName;
 		this.foodType = foodType;
 		this.rating = rating;
+		this.ID = trucknum;
+		trucknum++;
 	}
 
 	public int getNumericID() {
 		return trucknum;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public void setTruckNumber(int trucknum) {
@@ -43,6 +53,11 @@ public class FoodTruck {
 
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+
+	@Override
+	public String toString() {
+		return "FoodTruck ID = " + ID + " truckName= " + truckName + ", foodType= " + foodType + ", rating= " + rating + " ]";
 	}
 
 	
